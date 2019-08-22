@@ -7,7 +7,7 @@ node('maven-label') {
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
-      mvnHome = tool 'maven'
+      mvnHome = tool 'maven-3.6.1'
    }
    stage('Build') {
       withEnv(["MVN_HOME=$mvnHome"]) {
