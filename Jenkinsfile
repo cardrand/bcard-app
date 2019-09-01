@@ -12,7 +12,7 @@ node('maven-label') {
    stage('Build') {
       withEnv(["MVN_HOME=$mvnHome"]) {
          if (isUnix()) {
-            sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean package sonar:sonar -Dsonar.host.url=http://ec2-13-235-99-210.ap-south-1.compute.amazonaws.com:9000/'
+            sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean package sonar:sonar -Dsonar.host.url=http://ec2-13-126-246-169.ap-south-1.compute.amazonaws.com:9000/'
          } else {
             bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean package/)
          }
