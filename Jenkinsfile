@@ -2,12 +2,8 @@
 node('maven-label') {
    def mvnHome
    stage('Preparation') { // for display purposes
-      // Get some code from a GitHub repository
-      git 'https://github.com/cardrand/bcard-app.git'
-      // Get the Maven tool.
-      // ** NOTE: This 'M3' Maven tool must be configured
-      // **       in the global configuration.           
-      mvnHome = tool 'maven-3.6.1'
+       git 'https://github.com/cardrand/bcard-app.git'
+      mvnHome = tool 'maven'
    }
    stage('Build') {
       withEnv(["MVN_HOME=$mvnHome"]) {
